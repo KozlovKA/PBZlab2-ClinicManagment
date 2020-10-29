@@ -8,24 +8,24 @@ def hello_world():
     return render_template("index.html")
 
 
-@app.route('/human_data')
+@app.route('/about')
 def about():
     return 'about!'
-
-
-@app.route('/room_data')
-def about():
-    return 'about!'
-
-
-@app.route('/room_transfer')
-def about():
-    return 'about!'
-
-
-@app.route('/hospital_discharge')
-def about():
-    return 'about!'
+#
+#
+# @app.route('/room_data')
+# def about():
+#     return 'about!'
+#
+#
+# @app.route('/room_transfer')
+# def about():
+#     return 'about!'
+#
+#
+# @app.route('/hospital_discharge')
+# def about():
+#     return 'about!'
 
 
 if __name__ == '__main__':
