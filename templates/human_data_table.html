@@ -1,0 +1,37 @@
+{% extends  "base.html" %}
+{% block title %}Human Table
+{% endblock %}
+{% block content %}
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>human_id</th>
+            <th>gender</th>
+            <th>age</th>
+            <th>preliminary_diagnosis</th>
+            <th>admission_to_the_hospital</th>
+            <th>arrival_date</th>
+            <th>approximate_growth</th>
+            <th>hair_type</th>
+            <th>room_number</th>
+            <th>full_name</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for curr_human in all_human %}
+    <tr>
+        <td>{{ curr_human.human_id }}</td>
+        <td>{{ curr_human.gender }}</td>
+        <td>{{ curr_human.age }}</td>
+        <td>{{ curr_human.preliminary_diagnosis }}</td>
+        <td>{{ curr_human.admission_to_the_hospital }}</td>
+        <td>{{ curr_human.arrival_date }}</td>
+        <td>{{ curr_human.approximate_growth }}</td>
+        <td>{{ curr_human.hair_type }}</td>
+        <td>{{ curr_human.room_number }}</td>
+        <td>{{ curr_human.full_name }}</td>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
