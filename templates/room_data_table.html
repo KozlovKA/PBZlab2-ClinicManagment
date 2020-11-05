@@ -1,0 +1,33 @@
+{% extends  "base.html" %}
+{% block title %}Rooms Table
+{% endblock %}
+{% block content %}
+    <div id="rooms_table">
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>room_number</th>
+                <th>room_id</th>
+                <th>room_type</th>
+                <th>full_name</th>
+                <th>room_phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for curr_room in all_rooms %}
+                <tr>
+                <td>{{ curr_room.room_number }}</td>
+                <td>{{ curr_room.room_id }}</td>
+                <td>{{ curr_room.room_type }}</td>
+                <td>{{ curr_room.full_name }}</td>
+                <td>{{ curr_room.room_phone }}</td>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {#    <div id="buttons_human_table">#}
+    {#    <form method="post">#}
+    {#        <input type="submit"  value="Обновоить пользователя" class="button"/>#}
+    {#        </form>#}
+    {#    </div>#}
+{% endblock %}

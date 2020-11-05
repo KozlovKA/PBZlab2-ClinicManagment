@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for, Blueprint
-from databaseIntegration.human_data import Human
+from flask import Flask, render_template, url_for, Blueprint, request
+from databaseIntegration.database_queries import Database
 from databaseIntegration.database import create_connection, close_connection
 from databaseIntegration.database_config import Config
 
@@ -19,7 +19,7 @@ def hello_world():
 
 @app.route('/human_data_table')
 def human_table():
-    human = Human(connection=connection, cursor=cursor)
+    human = Database(connection=connection, cursor=cursor)
     all_human = human.get_all_humans()
     context = {
         'all_human': all_human
@@ -27,21 +27,19 @@ def human_table():
     return render_template("human_data_table.html", **context)
 
 
-#
-#
-# @app.route('/room_data')
-# def about():
-#     return 'about!'
-#
-#
-# @app.route('/room_transfer')
-# def about():
-#     return 'about!'
-#
-#
-# @app.route('/hospital_discharge')
-# def about():
-#     return 'about!'
+@app.route('/human_data_table/update', methods=["POST", "GET"])
+def human_table_update():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+
+@app.route('/room_data_table')
+def room_table():
+    room = Database(connection=connection, cursor=cursor)
+    all_rooms = room.get_all_rooms()
+    context = {
+        'all_rooms': all_rooms
+    }
+    return render_template("room_data_table.html", **context)
 
 
 if __name__ == '__main__':
