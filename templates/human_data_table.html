@@ -37,26 +37,27 @@
     <div>
         <form method="post">
                 <label  for="human_id"></label><textarea  name="human_id" id="human_id"
-                                                        placeholder="Введите номер пациента"></textarea>
+                                                        placeholder="Введите номер пациента">{{ human_id }}</textarea>
                 <label for="gender"></label><textarea name="gender" id="gender"
-                                                      placeholder="Введите пол пациента"></textarea>
+                                                      placeholder="Введите пол пациента">{{ gender }}</textarea>
                 <label for="age"></label><textarea name="age" id="age"
                                                 placeholder="Введите возвраст пациента"></textarea>
                 <label for="preliminary_diagnosis"></label><textarea name="preliminary_diagnosis" id="preliminary_diagnosis"
-                                                placeholder="Введите диагноз поступления пациента"></textarea>
+                                                placeholder="Введите диагноз поступления пациента">{{ preliminary_diagnosis }}</textarea>
                 <label for="admission_to_the_hospital"></label><textarea name="admission_to_the_hospital" id="admission_to_the_hospital"
-                                                placeholder="Введите способ прибытия в больницу пациента"></textarea>
+                                                placeholder="Введите способ прибытия в больницу пациента">{{ admission_to_the_hospital }}</textarea>
                 <label for="arrival_date"></label><textarea name="arrival_date" id="arrival_date"
-                                                placeholder="Введите дату поступления пациента"></textarea>
+                                                placeholder="Введите дату поступления пациента">{{ arrival_date }}</textarea>
                 <label for="approximate_growth"></label><textarea name="approximate_growth" id="approximate_growth"
-                                                placeholder="Введите примерный рост пациента"></textarea>
+                                                placeholder="Введите примерный рост пациента">{{ approximate_growth }}</textarea>
                 <label for="hair_type"></label><textarea name="hair_type" id="hair_type"
-                                                placeholder="Введите цвет волос пациента"></textarea>
+                                                placeholder="Введите цвет волос пациента">{{ hair_type }}</textarea>
                 <label for="room_number"></label><textarea name="room_number" id="room_number"
-                                                placeholder="Введите номер палаты пациента"></textarea>
+                                                placeholder="Введите номер палаты пациента">{{ room_number }}</textarea>
                 <label for="full_name"></label><textarea name="full_name" id="full_name"
-                                                placeholder="Введите ФИО пациента"></textarea>
-            <input id="buttons_human_table" type="submit" value="Обновоить пользователя" class="button"/>
+                                                placeholder="Введите ФИО пациента">{{ full_name  }}</textarea>
+{#            <input id="buttons_human_table" type="submit" onclick="window.location='/human_data_table/update'" value="Обновоить пользователя" class="button"/>#}
+             <button onclick="window.location='/human_data_table/update'" class="button" id="buttons_human_table">Информация о палатах</button>
         </form>
     </div>
 {% endblock %}
