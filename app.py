@@ -41,27 +41,36 @@ def human_table_update():
         hair_type = request.form["hair_type"]
         room_number = request.form["room_number"]
         full_name = request.form["full_name"]
-        all_hu = human.get_all_humans()
-        context = {
-            'human_id': human_id,
-            'gender': gender,
-            'age': age,
-            'preliminary_diagnosis': preliminary_diagnosis,
-            'admission_to_the_hospital': admission_to_the_hospital,
-            'arrival_date': arrival_date,
-            'approximate_growth': approximate_growth,
-            'hair_type': hair_type,
-            'room_number': room_number,
-            'full_name': full_name
-        }
-        try:
-            human.human_data_upgrade(human_id, gender, age, preliminary_diagnosis, admission_to_the_hospital,
-                                     arrival_date, approximate_growth, hair_type, room_number, full_name)
-            return redirect('/human_data_table')
-        except:
-            return "Ошбика"
-    else:
-        return render_template("human_data_table.html")
+        # try:
+        human.human_data_upgrade(human_id, gender, age, preliminary_diagnosis, admission_to_the_hospital,
+                                 arrival_date, approximate_growth, hair_type, room_number, full_name)
+
+        # except:
+        #     return "Ошбика"
+    return redirect('/human_data_table')
+
+
+@app.route('/human_data_table/add_huaman', methods=["POST", "GET"])
+def human_table_add():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+        human_id = request.form["human_id"]
+        gender = request.form["gender"]
+        age = request.form["age"]
+        preliminary_diagnosis = request.form['preliminary_diagnosis']
+        admission_to_the_hospital = request.form['admission_to_the_hospital']
+        arrival_date = request.form['arrival_date']
+        approximate_growth = request.form['approximate_growth']
+        hair_type = request.form["hair_type"]
+        room_number = request.form["room_number"]
+        full_name = request.form["full_name"]
+        # try:
+        human.human_add(human_id, gender, age, preliminary_diagnosis, admission_to_the_hospital,
+                        arrival_date, approximate_growth, hair_type, room_number, full_name)
+
+        # except:
+        #     return "Ошбика"
+    return redirect('/human_data_table')
 
 
 @app.route('/room_data_table')
