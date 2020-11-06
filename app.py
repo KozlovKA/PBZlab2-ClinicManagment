@@ -79,11 +79,8 @@ def human_table_delete():
     if request.method == "POST":
         human_id = request.form["human_id"]
 
-        # try:
         human.human_delete(human_id)
 
-        # except:
-        #     return "Ошбика"
     return redirect('/human_data_table')
 
 
@@ -95,6 +92,66 @@ def room_table():
         'all_rooms': all_rooms
     }
     return render_template("room_data_table.html", **context)
+
+
+@app.route('/room_data_table/update', methods=["POST", "GET"])
+def rooms_table_update():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+        room_number = request.form["room_number"]
+        room_id = request.form["room_id"]
+        room_type = request.form["room_type"]
+        full_name = request.form['full_name']
+        room_phone = request.form['room_phone']
+
+        human.room_data_upgrade(room_number, room_id, room_type, full_name, room_phone)
+
+    return redirect('/room_data_table')
+
+
+@app.route('/room_data_table/add', methods=["POST", "GET"])
+def rooms_table_add():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+        room_number = request.form["room_number"]
+        room_id = request.form["room_id"]
+        room_type = request.form["room_type"]
+        full_name = request.form['full_name']
+        room_phone = request.form['room_phone']
+
+        human.room_add(room_number, room_id, room_type, full_name, room_phone)
+
+    return redirect('/room_data_table')
+
+
+@app.route('/room_data_table/add', methods=["POST", "GET"])
+def room_delete():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+        room_id = request.form["room_id"]
+        human.room_delete(room_id)
+
+    return redirect('/room_data_table')
+
+
+@app.route('/arrival_human_check')
+def arrival_human_check():
+    arrival = Database(connection=connection, cursor=cursor)
+    all_arrivals = arrival.arrival_date_check("2020-10-08")
+    context = {
+        'all_arrivals': all_arrivals
+    }
+    return render_template("human_arrival_table.html", **context)
+
+
+@app.route('/female_age_check')
+def female_age_check():
+    females = Database(connection=connection, cursor=cursor)
+    all_females = females.female_age_check(18)
+    context = {
+        'all_females': all_females
+    }
+    return render_template("female_age_table.html", **context)
 
 
 if __name__ == '__main__':

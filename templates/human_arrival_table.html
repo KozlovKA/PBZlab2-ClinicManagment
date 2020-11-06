@@ -1,0 +1,26 @@
+{% extends  "base.html" %}
+{% block title %}Arrival Info Table
+{% endblock %}
+{% block content %}
+    <div id="arrival_table">
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>arrival_date</th>
+                <th>room_number</th>
+                <th>full_name</th>
+                <th>age</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for curr_arrival in all_arrivals %}
+                <tr>
+                <td>{{ curr_arrival.arrival_date }}</td>
+                <td>{{ curr_arrival.room_number }}</td>
+                <td>{{ curr_arrival.full_name }}</td>
+                <td>{{ curr_arrival.age }}</td>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

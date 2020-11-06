@@ -1,0 +1,24 @@
+{% extends  "base.html" %}
+{% block title %}Female Age Info Table
+{% endblock %}
+{% block content %}
+    <div id="female_age_table">
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>arrival_date</th>
+                <th>full_name</th>
+                <th>age</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for curr_female in all_females %}
+                <tr>
+                <td>{{ curr_female.arrival_date }}</td>
+                <td>{{ curr_female.full_name }}</td>
+                <td>{{ curr_female.age }}</td>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

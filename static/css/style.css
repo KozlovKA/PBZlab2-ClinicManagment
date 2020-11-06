@@ -12,7 +12,7 @@
 
 .line_delete {
     top: 54%;
-   width: 100%;
+    width: 100%;
     position: fixed;
 }
 
@@ -33,6 +33,16 @@
 
 body {
     background-color: #000000;
+}
+
+#arrival_table {
+    position: fixed;
+    left: 32%;
+}
+
+#female_age_table {
+    position: fixed;
+    left: 35%;
 }
 
 #buttons_menu {
@@ -250,6 +260,106 @@ body {
     position: fixed;
     top: 90%;
     left: 38%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#room_number_upgrade {
+    position: fixed;
+    top: 70%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+
+}
+
+#room_id_upgrade {
+    position: fixed;
+    top: 70%;
+    left: 14%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+
+}
+
+#room_type_upgrade {
+    position: fixed;
+    top: 70%;
+    left: 28%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#full_name_room_upgrade {
+    position: fixed;
+    top: 70%;
+    left: 42%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#room_phone_upgrade {
+    position: fixed;
+    top: 70%;
+    left: 56%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#rooms_number_add {
+    position: fixed;
+    top: 90%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+
+}
+
+#room_id_add {
+    position: fixed;
+    top: 90%;
+    left: 14%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+
+}
+
+#room_type_add {
+    position: fixed;
+    top: 90%;
+    left: 28%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#full_name_room_add {
+    position: fixed;
+    top: 90%;
+    left: 42%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#room_phone_add {
+    position: fixed;
+    top: 90%;
+    left: 56%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#room_id_delete {
+    position: fixed;
+    top: 49%;
     color: #FF8000;
     border-color: #FF8000;
     background-color: black;
