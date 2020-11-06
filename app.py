@@ -50,7 +50,7 @@ def human_table_update():
     return redirect('/human_data_table')
 
 
-@app.route('/human_data_table/add_huaman', methods=["POST", "GET"])
+@app.route('/human_data_table/add_human', methods=["POST", "GET"])
 def human_table_add():
     human = Database(connection=connection, cursor=cursor)
     if request.method == "POST":
@@ -67,6 +67,20 @@ def human_table_add():
         # try:
         human.human_add(human_id, gender, age, preliminary_diagnosis, admission_to_the_hospital,
                         arrival_date, approximate_growth, hair_type, room_number, full_name)
+
+        # except:
+        #     return "Ошбика"
+    return redirect('/human_data_table')
+
+
+@app.route('/human_data_table/delete_human', methods=["POST", "GET"])
+def human_table_delete():
+    human = Database(connection=connection, cursor=cursor)
+    if request.method == "POST":
+        human_id = request.form["human_id"]
+
+        # try:
+        human.human_delete(human_id)
 
         # except:
         #     return "Ошбика"

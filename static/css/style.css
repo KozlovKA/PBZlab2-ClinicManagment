@@ -10,6 +10,27 @@
     display: block;
 }
 
+.line_delete {
+    top: 54%;
+   width: 100%;
+    position: fixed;
+}
+
+.line_upgrade {
+    top: 75%;
+    width: 100%;
+    position: fixed;
+
+}
+
+.line_add {
+
+    top: 95%;
+    width: 100%;
+    position: fixed;
+
+}
+
 body {
     background-color: #000000;
 }
@@ -25,100 +46,226 @@ body {
     left: 25%;
 }
 
+#humans_table {
+    position: fixed;
+    left: 4%;
+}
+
 #buttons_human_table {
     position: fixed;
-    top: 70%;
+    top: 68%;
     left: 70%;
+}
+
+#buttons_human_table_add {
+    position: fixed;
+    top: 88%;
+    left: 70%;
+}
+
+#buttons_human_table_delete {
+    position: fixed;
+    top: 47%;
+    left: 70%;
+}
+
+#human_id_delete {
+    position: fixed;
+    top: 49%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
 }
 
 #human_id {
     position: fixed;
     top: 60%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
+
 #gender {
     position: fixed;
     top: 60%;
     left: 15%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
+
 #age {
     position: fixed;
     top: 60%;
     left: 30%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#preliminary_diagnosis{
+
+#preliminary_diagnosis {
     position: fixed;
     top: 60%;
     left: 45%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#admission_to_the_hospital{
+
+#admission_to_the_hospital {
     position: fixed;
     top: 60%;
     left: 60%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#arrival_date{
+
+#arrival_date {
     position: fixed;
     top: 60%;
     left: 75%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#approximate_growth{
+
+#approximate_growth {
     position: fixed;
     top: 60%;
     left: 90%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#hair_type{
+
+#hair_type {
     position: fixed;
     top: 70%;
     left: 8%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#room_number{
+
+#room_number {
     position: fixed;
     top: 70%;
     left: 23%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
-#full_name{
+
+#full_name {
     position: fixed;
     top: 70%;
     left: 38%;
-    color:#FF8000;
+    color: #FF8000;
     border-color: #FF8000;
     background-color: black;
 }
+
+#human_id_add {
+    position: fixed;
+    top: 80%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#gender_add {
+    position: fixed;
+    top: 80%;
+    left: 15%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#age_add {
+    position: fixed;
+    top: 80%;
+    left: 30%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#preliminary_diagnosis_add {
+    position: fixed;
+    top: 80%;
+    left: 45%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#admission_to_the_hospital_add {
+    position: fixed;
+    top: 80%;
+    left: 60%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#arrival_date_add {
+    position: fixed;
+    top: 80%;
+    left: 75%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#approximate_growth_add {
+    position: fixed;
+    top: 80%;
+    left: 90%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#hair_type_add {
+    position: fixed;
+    top: 90%;
+    left: 8%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#room_number_add {
+    position: fixed;
+    top: 90%;
+    left: 23%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
+#full_name_add {
+    position: fixed;
+    top: 90%;
+    left: 38%;
+    color: #FF8000;
+    border-color: #FF8000;
+    background-color: black;
+}
+
 .styled-table {
     color: wheat;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: 350px;
+    max-height: 150px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     position: fixed;
+    overflow: scroll;
 }
 
 .styled-table thead tr {
@@ -129,7 +276,7 @@ body {
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 6px 8px;
 }
 
 .styled-table tbody tr {

@@ -2,88 +2,102 @@
 {% block title %}Human Table
 {% endblock %}
 {% block content %}
-
-    <table class="styled-table">
-        <thead>
-        <tr>
-            <th>human_id</th>
-            <th>gender</th>
-            <th>age</th>
-            <th>preliminary_diagnosis</th>
-            <th>admission_to_the_hospital</th>
-            <th>arrival_date</th>
-            <th>approximate_growth</th>
-            <th>hair_type</th>
-            <th>room_number</th>
-            <th>full_name</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for curr_human in all_human %}
+    <div id="humans_table">
+        <table class="styled-table">
+            <thead>
             <tr>
-            <td>{{ curr_human.human_id }}</td>
-            <td>{{ curr_human.gender }}</td>
-            <td>{{ curr_human.age }}</td>
-            <td>{{ curr_human.preliminary_diagnosis }}</td>
-            <td>{{ curr_human.admission_to_the_hospital }}</td>
-            <td>{{ curr_human.arrival_date }}</td>
-            <td>{{ curr_human.approximate_growth }}</td>
-            <td>{{ curr_human.hair_type }}</td>
-            <td>{{ curr_human.room_number }}</td>
-            <td>{{ curr_human.full_name }}</td>
-        {% endfor %}
-        </tbody>
-    </table>
+                <th>human_id</th>
+                <th>gender</th>
+                <th>age</th>
+                <th>preliminary_diagnosis</th>
+                <th>admission_to_the_hospital</th>
+                <th>arrival_date</th>
+                <th>approximate_growth</th>
+                <th>hair_type</th>
+                <th>room_number</th>
+                <th>full_name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for curr_human in all_human %}
+                <tr>
+                <td>{{ curr_human.human_id }}</td>
+                <td>{{ curr_human.gender }}</td>
+                <td>{{ curr_human.age }}</td>
+                <td>{{ curr_human.preliminary_diagnosis }}</td>
+                <td>{{ curr_human.admission_to_the_hospital }}</td>
+                <td>{{ curr_human.arrival_date }}</td>
+                <td>{{ curr_human.approximate_growth }}</td>
+                <td>{{ curr_human.hair_type }}</td>
+                <td>{{ curr_human.room_number }}</td>
+                <td>{{ curr_human.full_name }}</td>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div>
-        <form method="post" action="{{url_for('human_table_update')}}" >
-                <label  for="human_id"></label><textarea  name="human_id" id="human_id"
-                                                        placeholder="Введите номер пациента">{{ human_id }}</textarea>
-                <label for="gender"></label><textarea name="gender" id="gender"
-                                                      placeholder="Введите пол пациента">{{ gender }}</textarea>
-                <label for="age"></label><textarea name="age" id="age"
-                                                placeholder="Введите возвраст пациента"></textarea>
-                <label for="preliminary_diagnosis"></label><textarea name="preliminary_diagnosis" id="preliminary_diagnosis"
-                                                placeholder="Введите диагноз поступления пациента">{{ preliminary_diagnosis }}</textarea>
-                <label for="admission_to_the_hospital"></label><textarea name="admission_to_the_hospital" id="admission_to_the_hospital"
-                                                placeholder="Введите способ прибытия в больницу пациента">{{ admission_to_the_hospital }}</textarea>
-                <label for="arrival_date"></label><textarea name="arrival_date" id="arrival_date"
-                                                placeholder="Введите дату поступления пациента">{{ arrival_date }}</textarea>
-                <label for="approximate_growth"></label><textarea name="approximate_growth" id="approximate_growth"
-                                                placeholder="Введите примерный рост пациента">{{ approximate_growth }}</textarea>
-                <label for="hair_type"></label><textarea name="hair_type" id="hair_type"
-                                                placeholder="Введите цвет волос пациента">{{ hair_type }}</textarea>
-                <label for="room_number"></label><textarea name="room_number" id="room_number"
-                                                placeholder="Введите номер палаты пациента">{{ room_number }}</textarea>
-                <label for="full_name"></label><textarea name="full_name" id="full_name"
-                                                placeholder="Введите ФИО пациента">{{ full_name  }}</textarea>
-            <input id="buttons_human_table" type="submit" value="Обновоить пользователя" class="button"/>
-{#             <button onclick="window.location='/human_data_table/update'" class="button" id="buttons_human_table">Информация о палатах</button>#}
+        <form method="post" action="{{ url_for('human_table_update') }}">
+            <label for="human_id"></label><textarea name="human_id" id="human_id"
+                                                    placeholder="Введите номер пациента">{{ human_id }}</textarea>
+            <label for="gender"></label><textarea name="gender" id="gender"
+                                                  placeholder="Введите пол пациента">{{ gender }}</textarea>
+            <label for="age"></label><textarea name="age" id="age"
+                                               placeholder="Введите возвраст пациента"></textarea>
+            <label for="preliminary_diagnosis"></label><textarea name="preliminary_diagnosis" id="preliminary_diagnosis"
+                                                                 placeholder="Введите диагноз поступления пациента">{{ preliminary_diagnosis }}</textarea>
+            <label for="admission_to_the_hospital"></label><textarea name="admission_to_the_hospital"
+                                                                     id="admission_to_the_hospital"
+                                                                     placeholder="Введите способ прибытия в больницу пациента">{{ admission_to_the_hospital }}</textarea>
+            <label for="arrival_date"></label><textarea name="arrival_date" id="arrival_date"
+                                                        placeholder="Введите дату поступления пациента">{{ arrival_date }}</textarea>
+            <label for="approximate_growth"></label><textarea name="approximate_growth" id="approximate_growth"
+                                                              placeholder="Введите примерный рост пациента">{{ approximate_growth }}</textarea>
+            <label for="hair_type"></label><textarea name="hair_type" id="hair_type"
+                                                     placeholder="Введите цвет волос пациента">{{ hair_type }}</textarea>
+            <label for="room_number"></label><textarea name="room_number" id="room_number"
+                                                       placeholder="Введите номер палаты пациента">{{ room_number }}</textarea>
+            <label for="full_name"></label><textarea name="full_name" id="full_name"
+                                                     placeholder="Введите ФИО пациента">{{ full_name }}</textarea>
+            <input id="buttons_human_table" type="submit" value="Обновоить информацию о пациенте" class="button"/>
+            <hr class="line_upgrade" color="FF8000"/>
+
         </form>
     </div>
     <div>
-        <form method="post" action="{{url_for('human_table_update')}}" >
-                <label  for="human_id"></label><textarea  name="human_id" id="human_id"
-                                                        placeholder="Введите номер пациента">{{ human_id }}</textarea>
-                <label for="gender"></label><textarea name="gender" id="gender"
-                                                      placeholder="Введите пол пациента">{{ gender }}</textarea>
-                <label for="age"></label><textarea name="age" id="age"
-                                                placeholder="Введите возвраст пациента"></textarea>
-                <label for="preliminary_diagnosis"></label><textarea name="preliminary_diagnosis" id="preliminary_diagnosis"
-                                                placeholder="Введите диагноз поступления пациента">{{ preliminary_diagnosis }}</textarea>
-                <label for="admission_to_the_hospital"></label><textarea name="admission_to_the_hospital" id="admission_to_the_hospital"
-                                                placeholder="Введите способ прибытия в больницу пациента">{{ admission_to_the_hospital }}</textarea>
-                <label for="arrival_date"></label><textarea name="arrival_date" id="arrival_date"
-                                                placeholder="Введите дату поступления пациента">{{ arrival_date }}</textarea>
-                <label for="approximate_growth"></label><textarea name="approximate_growth" id="approximate_growth"
-                                                placeholder="Введите примерный рост пациента">{{ approximate_growth }}</textarea>
-                <label for="hair_type"></label><textarea name="hair_type" id="hair_type"
-                                                placeholder="Введите цвет волос пациента">{{ hair_type }}</textarea>
-                <label for="room_number"></label><textarea name="room_number" id="room_number"
-                                                placeholder="Введите номер палаты пациента">{{ room_number }}</textarea>
-                <label for="full_name"></label><textarea name="full_name" id="full_name"
-                                                placeholder="Введите ФИО пациента">{{ full_name  }}</textarea>
-            <input id="buttons_human_table" type="submit" value="Обновоить пользователя" class="button"/>
-{#             <button onclick="window.location='/human_data_table/update'" class="button" id="buttons_human_table">Информация о палатах</button>#}
+        <form method="post" action="{{ url_for('human_table_add') }}">
+            <label for="human_id"></label><textarea name="human_id" id="human_id_add"
+                                                    placeholder="Введите номер пациента">{{ human_id }}</textarea>
+            <label for="gender"></label><textarea name="gender" id="gender_add"
+                                                  placeholder="Введите пол пациента">{{ gender }}</textarea>
+            <label for="age"></label><textarea name="age" id="age_add"
+                                               placeholder="Введите возвраст пациента"></textarea>
+            <label for="preliminary_diagnosis"></label><textarea name="preliminary_diagnosis"
+                                                                 id="preliminary_diagnosis_add"
+                                                                 placeholder="Введите диагноз поступления пациента">{{ preliminary_diagnosis }}</textarea>
+            <label for="admission_to_the_hospital"></label><textarea name="admission_to_the_hospital"
+                                                                     id="admission_to_the_hospital_add"
+                                                                     placeholder="Введите способ прибытия в больницу пациента">{{ admission_to_the_hospital }}</textarea>
+            <label for="arrival_date"></label><textarea name="arrival_date" id="arrival_date_add"
+                                                        placeholder="Введите дату поступления пациента">{{ arrival_date }}</textarea>
+            <label for="approximate_growth"></label><textarea name="approximate_growth" id="approximate_growth_add"
+                                                              placeholder="Введите примерный рост пациента">{{ approximate_growth }}</textarea>
+            <label for="hair_type"></label><textarea name="hair_type" id="hair_type_add"
+                                                     placeholder="Введите цвет волос пациента">{{ hair_type }}</textarea>
+            <label for="room_number"></label><textarea name="room_number" id="room_number_add"
+                                                       placeholder="Введите номер палаты пациента">{{ room_number }}</textarea>
+            <label for="full_name"></label><textarea name="full_name" id="full_name_add"
+                                                     placeholder="Введите ФИО пациента">{{ full_name }}</textarea>
+            <input id="buttons_human_table_add" type="submit" value="Добавить пациента" class="button"/>
+            <hr class="line_add" color="FF8000">
+
+        </form>
+    </div>
+    <div>
+        <form method="post" action="{{ url_for('human_table_delete') }}">
+            <label for="human_id"></label><textarea name="human_id" id="human_id_delete"
+                                                    placeholder="Введите номер пациента">{{ human_id }}</textarea>
+            <input id="buttons_human_table_delete" type="submit" value="Удалить пациента" class="button"/>
+            <hr class="line_delete" color="FF8000"/>
         </form>
     </div>
 {% endblock %}
